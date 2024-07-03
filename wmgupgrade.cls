@@ -9,6 +9,7 @@
 %% 1. The font has been changed to align with the .docx template
 %% 2. The package has been changed to avoid a hyperlink issue
 %% 3. Provide an example of cite and abbreviations 
+%% 4. Add word count on first page
 %%
 %% Author: Zhi Wang <zhi.wang.1@warwick.ac.uk>
 
@@ -101,7 +102,7 @@
 
         \vspace{10pt}
 
-        {\Large\textbf(\@id)}
+        {\Large\textbf{(\@id)}}
 
         {\Large\textbf\@date}
 
