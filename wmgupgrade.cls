@@ -115,7 +115,7 @@
 
         \vfill
         \raggedleft
-        {\normalsize \textbf{Word Count: \@wordcount}}
+        {\large\textbf{Word Count: \@wordcount}}
     \end{singlepage}
 }
 
