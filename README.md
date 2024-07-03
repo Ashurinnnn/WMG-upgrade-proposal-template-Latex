@@ -1,2 +1,3 @@
 # WMG-upgrade-proposal-template-Latex
-A Latex template for WMG Mphil/PhD upgrade proposal
+A LaTeX template for WMG MPhil/PhD upgrade proposal. Revised for 2024.
+Credit: @GeoffreyChen777
