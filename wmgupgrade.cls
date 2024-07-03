@@ -29,6 +29,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{xcolor}
 \RequirePackage{tabularx}
+\RequirePackage{background}
 % ===============================================
 % Font Style
 \linespread{1.5}
@@ -49,6 +50,21 @@
   \def\@advisor{#1}
 }
 
+\newcommand{\wordcount}[1]{
+    \def\@wordcount{#1}
+}
+
+\backgroundsetup{
+  position=current page.south east,
+  angle=0,
+  nodeanchor=south east,
+  vshift=2.54cm - 1cm,
+  hshift=-2.54cm - 0.5cm,
+  scale=1,
+  color=black,
+  opacity=1,
+  contents={\normalsize\textbf{Word Count:\@wordcount}}
+}
 
 % ===============================================
 % Page Structure
@@ -77,6 +93,10 @@
   \thispagestyle{empty}
 }{\clearpage}
 
+\AtBeginDocument{
+    \NoBgThispage
+    \AddEverypageHook{\ifnum\value{page}=1 \else \NoBgThispage \fi}
+}
 
 \newcommand\makepreface{
     \begin{singlepage}
@@ -111,6 +131,7 @@
         {\Large\textbf\@advisor}
     \end{singlepage}
 }
+
 
 \renewenvironment{abstract}{
   \clearpage
