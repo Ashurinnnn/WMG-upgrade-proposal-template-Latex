@@ -54,18 +54,6 @@
     \def\@wordcount{#1}
 }
 
-\backgroundsetup{
-  position=current page.south east,
-  angle=0,
-  nodeanchor=south east,
-  vshift=2.54cm - 1cm,
-  hshift=-2.54cm - 0.5cm,
-  scale=1,
-  color=black,
-  opacity=1,
-  contents={\normalsize\textbf{Word Count:\@wordcount}}
-}
-
 % ===============================================
 % Page Structure
 \pagestyle{fancyplain}% <- use fancyplain instead fancy
@@ -93,45 +81,61 @@
   \thispagestyle{empty}
 }{\clearpage}
 
-\AtBeginDocument{
-    \NoBgThispage
-    \AddEverypageHook{\ifnum\value{page}=1 \else \NoBgThispage \fi}
-}
 
 \newcommand\makepreface{
     \begin{singlepage}
         \centering
-	    \includegraphics[width=0.5\textwidth]{wmg_logo}
+        \includegraphics[width=0.5\textwidth]{wmg_logo}
 
-        
         \vspace{30pt}
-        
+
         {\Large\textbf{MPhil/PhD Upgrade Report}}
-    
+
         \vspace{50pt}
-    
+
         {\Huge\textbf\@title}
-        
+
         \vspace{80pt}
-        
+
         {\Large\textbf\@author}
-        
+
         \vspace{10pt}
-        
+
         {\Large\textbf(\@id)}
 
         {\Large\textbf\@date}
-        
-        \vspace{120pt}
-        
+
+        \vspace{90pt}
+
         {\Large\textbf{Supervisors}}
-        
+
         \vspace{10pt}
-        
+
         {\Large\textbf\@advisor}
+
+        \vfill
+        \raggedleft
+        {\normalsize \textbf{Word Count: \@wordcount}}
     \end{singlepage}
 }
 
+% disable background
+\backgroundsetup{
+  scale=1,
+  color=black,
+  opacity=0,
+  angle=0,
+  position=current page.south east,
+  vshift=-2.54cm,
+  hshift=-2.54cm - 0.5cm,
+  contents={}
+}
+
+
+\AtBeginDocument{
+    \NoBgThispage
+    \AddEverypageHook{\NoBgThispage}
+}
 
 \renewenvironment{abstract}{
   \clearpage
